@@ -1,0 +1,1 @@
+This is Java Spring example project

@@ -3,44 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-    .container{
-       display: grid;
-       place-items: center;
-    }
-
-    </style>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
 </head>
 <body>
 <div class="main_container">
     <h1>Register</h1>
     <div class="container">
-        <form action="register" method="post">
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form action="@{/register}" method="post">
             <label for="firstname">First name</label> <br>
-            <input type="text" name="firstName"/> <br>
+            <input id="firstName" type="text" name="firstName"/> <br>
 
             <label for="lastname">Last name</label> <br>
-            <input type="text" name="lastName"/> <br>
+            <input id="lastName" type="text" name="lastName"/> <br>
 
             <label for="email">Email</label> <br>
-            <input type="email" name="email"/> <br>
+            <input id="email" type="email" name="email"/> <br>
 
             <label for="dob">Date of birth</label> <br>
-            <input type="date" name="dob"/> <br>
+            <input id="dob" type="date" name="dob"/> <br>
 
             <label for="password">Password</label> <br>
-            <input type="password" name="password"/> <br>
+            <input id="password" type="password" name="password"/> <br>
 
             <label for="password">Re-Password</label> <br>
-            <input type="password" name="rePassword"/> <br>
+            <input id="rePassword" type="password" name="rePassword"/> <br>
             <br>
             <button type="submit">Register</button>
         </form>
+        <p>Navigate to <a th:href="@{/login}">login</a> page!</p>
     </div>
 </div>
 </body>

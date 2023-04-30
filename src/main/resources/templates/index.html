@@ -3,30 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <style>
-<!--        * {-->
-<!--            margin: 0;-->
-<!--            padding: 0;-->
-<!--            box-sizing: border-box;-->
-<!--        }-->
-<!--        body{-->
-<!--            display: grid;-->
-<!--            place-items: center;-->
-<!--            height: 100vh;-->
-<!--        }-->
-<!--        button{-->
-<!--            height: 80px;-->
-<!--            width: 160px;-->
-<!--        }-->
-    </style>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
 </head>
 <body>
+<img th:src="@{/images/logo.svg}" alt="Spring logo"/>
 <div class="main_container">
+
     <h1>Welcome to test validation project</h1>
-    <button>
-        Click
-    </button>
-    <p>Click <a th:href="@{/login}">here</a>here!</p>
+    <br>
+    <h2><a th:href="@{/login}">Click here to continue!</a></h2>
 </div>
 
 </body>

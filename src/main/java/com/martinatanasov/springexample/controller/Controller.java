@@ -6,10 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Objects;
 
-//@Controller
+@Controller
 public class IndexController {
 
     @GetMapping("/")
@@ -17,21 +18,21 @@ public class IndexController {
         return "index";
     }
 
-    @PostMapping("/register")
+    //@PostMapping
+    @GetMapping("/register")
     public String userRegister(@ModelAttribute User user){
         System.out.println(user.toString());
-        return "index";
+        return "register";
     }
 
-    @PostMapping("/login")
+    @GetMapping("/login")
     public String userLogin(String email, String password, Model model){
         System.out.println("Email: " + email + "\n" + "Pass: " + password);
-        if(Objects.equals(email, "") && Objects.equals(password, "")){
-            return "index";
-        }
+
         model.addAttribute("email", email);
-        return "userControlPanel";
+        return "login";
     }
+
 //    @GetMapping("/hello")
 //    public String sayHello(Model theModel) {
 //

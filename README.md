@@ -4,7 +4,7 @@ Software architecture: MVC
 
 Software: Java, Spring framework, html, css
 
-Features:
+Dependencies:
 
 	1.Thymeleaf
 	2.Spring web
